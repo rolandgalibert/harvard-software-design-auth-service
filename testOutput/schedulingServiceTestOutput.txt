@@ -1,0 +1,28 @@
+Logging in as super_admin:
+Creating provider user with SquareDesk user role and provider role:
+Creating renter user with SquareDesk user role and renter role:
+
+Logging in as provider user and carrying out original assignment 3 tests:
+Creating user 'provider_1' and related provider profile
+Creating office space 'office_space_1' for provider_1
+
+Logging out as provider user, logging in as renter user and carrying out original assignment 3 tests:
+Creating user 'renter_1' and related renter profile
+
+Checking availability of office_space_1 for 4 November to 7 November 2014.
+office_space_1 is available.
+
+Booking office_space_1 for renter_1 for 4 November to 7 November 2014.
+
+Checking availability of office_space_1 for 6 November to 11 November 2014 (overlaps already booked period).
+office_space_1 is not available
+
+Deleting original booking for 4 November to 7 November 2014.
+Re-checking availability of office_space_1 for 6 November to 11 November 2014 (should now be available).
+office_space_1 is available.
+
+Booking office_space_1 for renter_1 for 11 November to 6 November 2014 (bad rental period; start date after end date).
+RentalPeriodNotValidException thrown.
+
+Booking office_space_1 for renter_1 for $5/day (office space charges $10/day).
+RateNotValidException thrown.

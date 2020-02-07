@@ -1,0 +1,48 @@
+Logging in as super_admin:
+Creating provider user with SquareDesk user role and provider role:
+Creating renter user with SquareDesk user role and renter role:
+
+Logging in as provider user and carrying out original assignment 3 tests:
+Creating user 'provider_1' and related provider profile
+
+Creating office space 'office_space_1' for provider_1
+	lat/long = 10.1/10.1; facilityType = 'Home', category = 'Dining room', features=WIFI, Coffee; average rating = 5
+
+Creating office space 'office_space_2' for provider_1
+	lat/long = 10.2/10.2; facilityType = 'Garage', features=Allows pets; average rating = 5
+
+Creating office space 'office_space_3' for provider_1
+	lat/long = 20.1/20.1; facilityType = 'Home', category = 'Dining room', features=WIFI, Coffee; average rating = 5
+
+Creating office space 'office_space_4' for provider_1
+	lat/long = 20.2/20.2; facilityType = 'Garage', features=WIFI; average rating = 5
+
+Logging out as provider user, logging in as renter user and carrying out original assignment 3 tests:
+
+Creating user 'renter_1' and associated renter profile
+	Located at lat/long = 10/10; requires average rating = 5
+
+Creating user 'renter_2' and associated renter profile
+	Located at lat/long = 20/20; requires average rating = 5
+
+Office spaces corresponding to renter 1's search criteria:
+	- office_space_2
+	- office_space_1
+
+Office spaces corresponding to renter 2's search criteria:
+	- office_space_3
+	- office_space_4
+
+Adding features WIFI to renter 1's requirements.
+Office spaces now corresponding to renter 1's search criteria:
+	- office_space_1
+
+Adding bad rating to office_space_1 to create average rating of 3.
+Office spaces now corresponding to renter 1's search criteria:
+
+Adding facility type 'Home'/category 'Dining room' to renter 2's requirements.
+Office spaces corresponding to renter 2's search criteria:
+	- office_space_3
+
+Deleting office_space_3.
+Office spaces corresponding to renter 2's search criteria:

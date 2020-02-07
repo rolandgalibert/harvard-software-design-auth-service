@@ -1,0 +1,143 @@
+
+#Sample Authentication Data:
+
+# define service
+# define_service, <service_id>, <service_name>, <service_description>
+define_service,  provider_api_service, Provider API Service, Provider and Office Space Management 
+define_service,  renter_service, Renter Service, Renter Management and Access
+define_service,  authentication_service, Authentication Service, Manage Authentication Configuration and Control Access to Restricted Service Interfaces
+
+
+# define permissions
+# define_permission, <service_id>, <permission_id>, <permission_name>, <permission_description>
+define_permission, renter_service, create_renter, Create Renter Permission, Permission to create a new renter
+define_permission, renter_service, search_for_office_space, Search for Office Space Permission, Permission to search for office space 
+define_permission, renter_service, create_booking, Create Booking Permission, Permission to create an office space booking
+
+define_permission, provider_api_service, create_provider, Create Provider Permission, Permission to create a new provider
+define_permission, provider_api_service, update_provider, Update Provider Permission, Permission to update a provider
+define_permission, provider_api_service, create_office_space, Create Office Space Permission, Permission to create a new office space 
+define_permission, provider_api_service, update_office_space, Update Office Space Permission, Permission to update an office space 
+
+define_permission, authentication_service, define_service, Define Service Permission, Permission to create a new service
+define_permission, authentication_service, define_permission, Define Permission Permission, Permission to create a new permission
+define_permission, authentication_service, define_role, Define Role Permission, Permission to create a new role
+define_permission, authentication_service, add_entitlement_to_role, Add entitlement to role , Permission to add an entitlement to a role
+define_permission, authentication_service, create_user_permission, Create User Permission, Permission to create create a user
+define_permission, authentication_service, add_credential_to_user, Add Credential to User Permission, Permission to add credentials to a user
+define_permission, authentication_service, add_entitlement_to_user, Add Entitlement to User Permission, Permission to add entitlements to a user
+
+
+# define roles
+# define_role, <role_id>, <role_name>, <role_description>
+define_role, renter_role, Renter Role, Role for Renters 
+define_role, provider_role, Provider Role , Role for Providers  
+define_role, authentication_admin_role, Authentication Admin Role, Role for Authentication Administrator
+define_role, sd_admin_role, SD Admin, Role for Square Desk Admins
+
+
+# add entitlement (permission or role) to role
+# add_entitlement_to_role, <role_id>, <entitlement_id>
+add_entitlement_to_role, renter_role, create_renter
+add_entitlement_to_role, renter_role, search_for_office_space
+add_entitlement_to_role, renter_role, create_booking 
+ 
+add_entitlement_to_role, provider_role, create_provider
+add_entitlement_to_role, provider_role, update_provider
+add_entitlement_to_role, provider_role, create_office_space
+add_entitlement_to_role, provider_role, update_office_space
+add_entitlement_to_role, authentication_admin_role, define_service
+add_entitlement_to_role, authentication_admin_role, define_permission
+add_entitlement_to_role, authentication_admin_role, define_role
+add_entitlement_to_role, authentication_admin_role, add_entitlement
+add_entitlement_to_role, authentication_admin_role, create_user_permission
+add_entitlement_to_role, authentication_admin_role, add_credential_to_user
+add_entitlement_to_role, authentication_admin_role, add_entitlement_to_user
+
+add_entitlement_to_role, sd_admin_role, renter_role 
+add_entitlement_to_role, sd_admin_role, provider_role
+add_entitlement_to_role, sd_admin_role, authentication_admin_role
+
+# create_user
+# create_user <user_id>, <user_name>
+create_user, sd_admin_user, Square Desk Admin
+create_user, provider_user, Provider User 
+create_user, renter_user, Renter User 
+create_user, authentication_admin_user, Authentication Admin
+# add_credential
+# add_credential, <user_id>, <login_name>, <password>
+add_credential, sd_admin_user, sam, secret
+add_credential, sd_admin_user, sam2, secret2
+add_credential, provider_user, joe, 1234
+add_credential, renter_user, lucy, 4567
+add_credential, authentication_admin_user, jill, 1234567
+
+
+
+# add_role_to_user 
+# add_role_to_user,<userid>,<entitlementid>
+add_role_to_user, sd_admin_user, sd_admin_role
+add_role_to_user, provider_user, provider_role
+add_role_to_user, renter_user, renter_role
+add_role_to_user, authentication_admin_user, authentication_admin_role
+
+
+# end of file
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

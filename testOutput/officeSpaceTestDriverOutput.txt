@@ -1,0 +1,68 @@
+Logging in as super_admin and creating provider user with provider role:
+
+Logging in as provider user and carrying out original assignment 2 office space provider tests:
+Validating and printing out new office space:
+Name = 'Test office space name'
+Location:
+	Street1: New street 1
+	Street2: New street 2
+	City: Williamstown
+	State: MA
+	Country: US
+	Zip: 01267
+	Latitude: 4.0
+	Longitude: 5.0
+Rate: Period = 'Daily', rate amount = 50.0
+Capacity: max occupants = 4, workspaces = 4, square footage = 100.0
+Facility type = 'Home'
+Facility subtype = 'Living room'
+
+Adding same feature to induce exception:
+Specified feature already exists for this office space.
+Attempting to remove non-existent feature to induce exception:
+Specified feature does not exist for this office space.
+
+Adding same common access area to induce exception:
+Specified common access area already exists for this office space.
+Attempting to remove non-existent common access area to induce exception:
+Specified common access area does not exist for this office space.
+
+Entering location without street 1 to induce exception:
+Office space location error - Street1 cannot be blank.
+Entering location without city to induce exception:
+Office space location error - City cannot be blank.
+Entering location without country to induce exception:
+Office space location error - Country cannot be blank.
+Entering location without valid country to induce exception:
+Office space location error - Illegal country specified (country must be in ISO format).
+
+Changing maximum occupants to 0 to induce exception:
+Office space capacity error - maximum # of occupants must be greater than 0.
+Changing workspaces to 0 to induce exception:
+Office space capacity error - # of available workspaces must be greater than 0.
+
+Changing "Home" facility subtype to blank to induce exception:
+Office space facility subtype cannot be blank if facility type = 'Home'.
+
+Adding already-existing office space rate to induce exception:
+Rate with specified rental period already exists for office space.
+Attempting to remove non-existent office space rate to induce exception:
+Rate with specified rental period does not exist for office space.
+Deleting only rate associated with office space to induce exception:
+At least one rate must be entered for an office space
+
+Validating and printing out final valid office space:
+Name = 'Test office space name'
+Location:
+	Street1: Street 1
+	Street2: 
+	City: Williamstown
+	State: MA
+	Country: US
+	Zip: 01267
+	Latitude: 4.0
+	Longitude: 5.0
+Rate: Period = 'Daily', rate amount = 50.0
+Capacity: max occupants = 4, workspaces = 4, square footage = 100.0
+Facility type = 'Home'
+Facility subtype = 'Living room'

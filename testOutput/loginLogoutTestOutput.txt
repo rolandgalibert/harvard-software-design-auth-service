@@ -1,0 +1,16 @@
+Logging onto AuthService as super_admin and creating user1 user and credentials:
+Logging out as super_admin and logging in and out as user1 (no exceptions expected):
+
+Logging onto AuthService with non-existent userID:
+InvalidUserIDException occurred.
+
+Logging onto AuthService with user1 loginID and bad password:
+InvalidPasswordException occurred.
+
+Logging onto AuthService with user1 loginID, changing password, logging out and logging back in (no exceptions expected):
+
+Logging in then logging out twice (use of expired access token):
+InvalidAccessTokenException occurred.
+
+Logging in, sleeping past access token timeout period then attempting to change password (use of expired access token):
+InvalidAccessTokenException occurred.

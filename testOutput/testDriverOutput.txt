@@ -1,0 +1,753 @@
+service:
+	ID: renter_service
+	name: Renter Service
+	description: Renter Management and Access
+	permissions:
+		-
+		permission:
+			ID: create_renter
+			name: Create Renter Permission
+			description: Permission to create a new renter
+		permission:
+			ID: search_for_office_space
+			name: Search for Office Space Permission
+			description: Permission to search for office space
+		permission:
+			ID: create_booking
+			name: Create Booking Permission
+			description: Permission to create an office space booking
+service:
+	ID: auth_service
+	name: Authentication Service
+	description: Authentication Service
+	permissions:
+		-
+		permission:
+			ID: create_service
+			name: Create Service
+			description: Create Service
+		permission:
+			ID: update_service_description
+			name: Update Service Description
+			description: Update service description
+		permission:
+			ID: remove_service
+			name: Remove Service
+			description: Remove service
+		permission:
+			ID: add_service_permission
+			name: Add Service Permission
+			description: Add service permission
+		permission:
+			ID: remove_service_permission
+			name: Remove Service Permission
+			description: Remove service permission
+		permission:
+			ID: create_permission
+			name: Create Permission
+			description: Create permission
+		permission:
+			ID: update_permission_description
+			name: Update Permission Description
+			description: Update permission description
+		permission:
+			ID: create_role
+			name: Create Role
+			description: Create role
+		permission:
+			ID: update_role_description
+			name: Update Role Description
+			description: Update role description
+		permission:
+			ID: remove_role
+			name: Remove Role
+			description: Remove role
+		permission:
+			ID: add_role_permission
+			name: Add Role Permission
+			description: Add role permission
+		permission:
+			ID: remove_role_permission
+			name: Remove Role Permission
+			description: Remove role permission
+		permission:
+			ID: add_role_entitlement
+			name: Add Role Entitlement
+			description: Add role entitlement
+		permission:
+			ID: create_user
+			name: Create User
+			description: Create user
+		permission:
+			ID: update_user_name
+			name: Update User Name
+			description: Update user name
+		permission:
+			ID: add_user_credential
+			name: Add User Credential
+			description: Add user credential
+		permission:
+			ID: remove_user_credential
+			name: Remove User Credential
+			description: Remove user credential
+		permission:
+			ID: update_user_password
+			name: Update User Password
+			description: Update user password
+		permission:
+			ID: add_user_permission
+			name: Add User Permission
+			description: Add user permission
+		permission:
+			ID: remove_user_permission
+			name: Remove User Permission
+			description: Remove user permission
+		permission:
+			ID: add_user_role
+			name: Add User Role
+			description: Add user role
+		permission:
+			ID: remove_user_role
+			name: Remove User Role
+			description: Remove user role
+service:
+	ID: provider_api_service
+	name: Provider API Service
+	description: Provider and Office Space Management
+	permissions:
+		-
+		permission:
+			ID: create_provider
+			name: Create Provider Permission
+			description: Permission to create a new provider
+		permission:
+			ID: update_provider
+			name: Update Provider Permission
+			description: Permission to update a provider
+		permission:
+			ID: create_office_space
+			name: Create Office Space Permission
+			description: Permission to create a new office space
+		permission:
+			ID: update_office_space
+			name: Update Office Space Permission
+			description: Permission to update an office space
+service:
+	ID: authentication_service
+	name: Authentication Service
+	description: Manage Authentication Configuration and Control Access to Restricted Service Interfaces
+	permissions:
+		-
+		permission:
+			ID: define_service
+			name: Define Service Permission
+			description: Permission to create a new service
+		permission:
+			ID: define_permission
+			name: Define Permission Permission
+			description: Permission to create a new permission
+		permission:
+			ID: define_role
+			name: Define Role Permission
+			description: Permission to create a new role
+		permission:
+			ID: add_entitlement_to_role
+			name: Add entitlement to role
+			description: Permission to add an entitlement to a role
+		permission:
+			ID: create_user_permission
+			name: Create User Permission
+			description: Permission to create create a user
+		permission:
+			ID: add_credential_to_user
+			name: Add Credential to User Permission
+			description: Permission to add credentials to a user
+		permission:
+			ID: add_entitlement_to_user
+			name: Add Entitlement to User Permission
+			description: Permission to add entitlements to a user
+role:
+	ID: sd_admin_role
+	name: SD Admin
+	description: Role for Square Desk Admins
+	subroles:
+		-
+		role:
+			ID: renter_role
+			name: Renter Role
+			description: Role for Renters
+			subroles:
+				-
+			permissions:
+				-
+				permission:
+					ID: create_renter
+					name: Create Renter Permission
+					description: Permission to create a new renter
+				permission:
+					ID: search_for_office_space
+					name: Search for Office Space Permission
+					description: Permission to search for office space
+				permission:
+					ID: create_booking
+					name: Create Booking Permission
+					description: Permission to create an office space booking
+		role:
+			ID: provider_role
+			name: Provider Role
+			description: Role for Providers
+			subroles:
+				-
+			permissions:
+				-
+				permission:
+					ID: create_provider
+					name: Create Provider Permission
+					description: Permission to create a new provider
+				permission:
+					ID: update_provider
+					name: Update Provider Permission
+					description: Permission to update a provider
+				permission:
+					ID: create_office_space
+					name: Create Office Space Permission
+					description: Permission to create a new office space
+				permission:
+					ID: update_office_space
+					name: Update Office Space Permission
+					description: Permission to update an office space
+		role:
+			ID: authentication_admin_role
+			name: Authentication Admin Role
+			description: Role for Authentication Administrator
+			subroles:
+				-
+			permissions:
+				-
+				permission:
+					ID: define_service
+					name: Define Service Permission
+					description: Permission to create a new service
+				permission:
+					ID: define_permission
+					name: Define Permission Permission
+					description: Permission to create a new permission
+				permission:
+					ID: define_role
+					name: Define Role Permission
+					description: Permission to create a new role
+				permission:
+					ID: create_user_permission
+					name: Create User Permission
+					description: Permission to create create a user
+				permission:
+					ID: add_credential_to_user
+					name: Add Credential to User Permission
+					description: Permission to add credentials to a user
+				permission:
+					ID: add_entitlement_to_user
+					name: Add Entitlement to User Permission
+					description: Permission to add entitlements to a user
+	permissions:
+		-
+role:
+	ID: provider_role
+	name: Provider Role
+	description: Role for Providers
+	subroles:
+		-
+	permissions:
+		-
+		permission:
+			ID: create_provider
+			name: Create Provider Permission
+			description: Permission to create a new provider
+		permission:
+			ID: update_provider
+			name: Update Provider Permission
+			description: Permission to update a provider
+		permission:
+			ID: create_office_space
+			name: Create Office Space Permission
+			description: Permission to create a new office space
+		permission:
+			ID: update_office_space
+			name: Update Office Space Permission
+			description: Permission to update an office space
+role:
+	ID: renter_role
+	name: Renter Role
+	description: Role for Renters
+	subroles:
+		-
+	permissions:
+		-
+		permission:
+			ID: create_renter
+			name: Create Renter Permission
+			description: Permission to create a new renter
+		permission:
+			ID: search_for_office_space
+			name: Search for Office Space Permission
+			description: Permission to search for office space
+		permission:
+			ID: create_booking
+			name: Create Booking Permission
+			description: Permission to create an office space booking
+role:
+	ID: super_admin
+	name: Super Admin
+	description: Super admin
+	subroles:
+		-
+	permissions:
+		-
+		permission:
+			ID: create_service
+			name: Create Service
+			description: Create Service
+		permission:
+			ID: update_service_description
+			name: Update Service Description
+			description: Update service description
+		permission:
+			ID: remove_service
+			name: Remove Service
+			description: Remove service
+		permission:
+			ID: add_service_permission
+			name: Add Service Permission
+			description: Add service permission
+		permission:
+			ID: remove_service_permission
+			name: Remove Service Permission
+			description: Remove service permission
+		permission:
+			ID: create_permission
+			name: Create Permission
+			description: Create permission
+		permission:
+			ID: update_permission_description
+			name: Update Permission Description
+			description: Update permission description
+		permission:
+			ID: create_role
+			name: Create Role
+			description: Create role
+		permission:
+			ID: update_role_description
+			name: Update Role Description
+			description: Update role description
+		permission:
+			ID: remove_role
+			name: Remove Role
+			description: Remove role
+		permission:
+			ID: add_role_permission
+			name: Add Role Permission
+			description: Add role permission
+		permission:
+			ID: remove_role_permission
+			name: Remove Role Permission
+			description: Remove role permission
+		permission:
+			ID: add_role_entitlement
+			name: Add Role Entitlement
+			description: Add role entitlement
+		permission:
+			ID: create_user
+			name: Create User
+			description: Create user
+		permission:
+			ID: update_user_name
+			name: Update User Name
+			description: Update user name
+		permission:
+			ID: add_user_credential
+			name: Add User Credential
+			description: Add user credential
+		permission:
+			ID: remove_user_credential
+			name: Remove User Credential
+			description: Remove user credential
+		permission:
+			ID: update_user_password
+			name: Update User Password
+			description: Update user password
+		permission:
+			ID: add_user_permission
+			name: Add User Permission
+			description: Add user permission
+		permission:
+			ID: remove_user_permission
+			name: Remove User Permission
+			description: Remove user permission
+		permission:
+			ID: add_user_role
+			name: Add User Role
+			description: Add user role
+		permission:
+			ID: remove_user_role
+			name: Remove User Role
+			description: Remove user role
+role:
+	ID: authentication_admin_role
+	name: Authentication Admin Role
+	description: Role for Authentication Administrator
+	subroles:
+		-
+	permissions:
+		-
+		permission:
+			ID: define_service
+			name: Define Service Permission
+			description: Permission to create a new service
+		permission:
+			ID: define_permission
+			name: Define Permission Permission
+			description: Permission to create a new permission
+		permission:
+			ID: define_role
+			name: Define Role Permission
+			description: Permission to create a new role
+		permission:
+			ID: create_user_permission
+			name: Create User Permission
+			description: Permission to create create a user
+		permission:
+			ID: add_credential_to_user
+			name: Add Credential to User Permission
+			description: Permission to add credentials to a user
+		permission:
+			ID: add_entitlement_to_user
+			name: Add Entitlement to User Permission
+			description: Permission to add entitlements to a user
+user:
+	name: Square Desk Admin
+	credentials:
+		-
+		credential:
+			loginID: sam
+			passwordMessageDigest: eed28cb82db5fdeb839e43960048339ee54dfd90
+		credential:
+			loginID: sam2
+			passwordMessageDigest: abffdc719f732f06372467960d8fa61ae57ac226
+	roles:
+		-
+		role:
+			ID: sd_admin_role
+			name: SD Admin
+			description: Role for Square Desk Admins
+			subroles:
+				-
+				role:
+					ID: renter_role
+					name: Renter Role
+					description: Role for Renters
+					subroles:
+						-
+					permissions:
+						-
+						permission:
+							ID: create_renter
+							name: Create Renter Permission
+							description: Permission to create a new renter
+						permission:
+							ID: search_for_office_space
+							name: Search for Office Space Permission
+							description: Permission to search for office space
+						permission:
+							ID: create_booking
+							name: Create Booking Permission
+							description: Permission to create an office space booking
+				role:
+					ID: provider_role
+					name: Provider Role
+					description: Role for Providers
+					subroles:
+						-
+					permissions:
+						-
+						permission:
+							ID: create_provider
+							name: Create Provider Permission
+							description: Permission to create a new provider
+						permission:
+							ID: update_provider
+							name: Update Provider Permission
+							description: Permission to update a provider
+						permission:
+							ID: create_office_space
+							name: Create Office Space Permission
+							description: Permission to create a new office space
+						permission:
+							ID: update_office_space
+							name: Update Office Space Permission
+							description: Permission to update an office space
+				role:
+					ID: authentication_admin_role
+					name: Authentication Admin Role
+					description: Role for Authentication Administrator
+					subroles:
+						-
+					permissions:
+						-
+						permission:
+							ID: define_service
+							name: Define Service Permission
+							description: Permission to create a new service
+						permission:
+							ID: define_permission
+							name: Define Permission Permission
+							description: Permission to create a new permission
+						permission:
+							ID: define_role
+							name: Define Role Permission
+							description: Permission to create a new role
+						permission:
+							ID: create_user_permission
+							name: Create User Permission
+							description: Permission to create create a user
+						permission:
+							ID: add_credential_to_user
+							name: Add Credential to User Permission
+							description: Permission to add credentials to a user
+						permission:
+							ID: add_entitlement_to_user
+							name: Add Entitlement to User Permission
+							description: Permission to add entitlements to a user
+			permissions:
+				-
+	permissions:
+		-
+	accessTokens:
+		-
+user:
+	name: Renter User
+	credentials:
+		-
+		credential:
+			loginID: lucy
+			passwordMessageDigest: 734043357c3c1f1ad93d335c5d2b12d5f16d5563
+	roles:
+		-
+		role:
+			ID: renter_role
+			name: Renter Role
+			description: Role for Renters
+			subroles:
+				-
+			permissions:
+				-
+				permission:
+					ID: create_renter
+					name: Create Renter Permission
+					description: Permission to create a new renter
+				permission:
+					ID: search_for_office_space
+					name: Search for Office Space Permission
+					description: Permission to search for office space
+				permission:
+					ID: create_booking
+					name: Create Booking Permission
+					description: Permission to create an office space booking
+	permissions:
+		-
+	accessTokens:
+		-
+user:
+	name: Authentication Admin
+	credentials:
+		-
+		credential:
+			loginID: jill
+			passwordMessageDigest: 456a1a7beaf02039c24e70af80e7b5beb0adbcca
+	roles:
+		-
+		role:
+			ID: authentication_admin_role
+			name: Authentication Admin Role
+			description: Role for Authentication Administrator
+			subroles:
+				-
+			permissions:
+				-
+				permission:
+					ID: define_service
+					name: Define Service Permission
+					description: Permission to create a new service
+				permission:
+					ID: define_permission
+					name: Define Permission Permission
+					description: Permission to create a new permission
+				permission:
+					ID: define_role
+					name: Define Role Permission
+					description: Permission to create a new role
+				permission:
+					ID: create_user_permission
+					name: Create User Permission
+					description: Permission to create create a user
+				permission:
+					ID: add_credential_to_user
+					name: Add Credential to User Permission
+					description: Permission to add credentials to a user
+				permission:
+					ID: add_entitlement_to_user
+					name: Add Entitlement to User Permission
+					description: Permission to add entitlements to a user
+	permissions:
+		-
+	accessTokens:
+		-
+user:
+	name: Super Admin
+	credentials:
+		-
+		credential:
+			loginID: super_admin
+			passwordMessageDigest: 299c3c70ce0e0dcf74bddb1a1f02684cb69d93f8
+	roles:
+		-
+		role:
+			ID: super_admin
+			name: Super Admin
+			description: Super admin
+			subroles:
+				-
+			permissions:
+				-
+				permission:
+					ID: create_service
+					name: Create Service
+					description: Create Service
+				permission:
+					ID: update_service_description
+					name: Update Service Description
+					description: Update service description
+				permission:
+					ID: remove_service
+					name: Remove Service
+					description: Remove service
+				permission:
+					ID: add_service_permission
+					name: Add Service Permission
+					description: Add service permission
+				permission:
+					ID: remove_service_permission
+					name: Remove Service Permission
+					description: Remove service permission
+				permission:
+					ID: create_permission
+					name: Create Permission
+					description: Create permission
+				permission:
+					ID: update_permission_description
+					name: Update Permission Description
+					description: Update permission description
+				permission:
+					ID: create_role
+					name: Create Role
+					description: Create role
+				permission:
+					ID: update_role_description
+					name: Update Role Description
+					description: Update role description
+				permission:
+					ID: remove_role
+					name: Remove Role
+					description: Remove role
+				permission:
+					ID: add_role_permission
+					name: Add Role Permission
+					description: Add role permission
+				permission:
+					ID: remove_role_permission
+					name: Remove Role Permission
+					description: Remove role permission
+				permission:
+					ID: add_role_entitlement
+					name: Add Role Entitlement
+					description: Add role entitlement
+				permission:
+					ID: create_user
+					name: Create User
+					description: Create user
+				permission:
+					ID: update_user_name
+					name: Update User Name
+					description: Update user name
+				permission:
+					ID: add_user_credential
+					name: Add User Credential
+					description: Add user credential
+				permission:
+					ID: remove_user_credential
+					name: Remove User Credential
+					description: Remove user credential
+				permission:
+					ID: update_user_password
+					name: Update User Password
+					description: Update user password
+				permission:
+					ID: add_user_permission
+					name: Add User Permission
+					description: Add user permission
+				permission:
+					ID: remove_user_permission
+					name: Remove User Permission
+					description: Remove user permission
+				permission:
+					ID: add_user_role
+					name: Add User Role
+					description: Add user role
+				permission:
+					ID: remove_user_role
+					name: Remove User Role
+					description: Remove user role
+	permissions:
+		-
+	accessTokens:
+		-
+		accessToken:
+			ID: 4e3fa9df-f33f-420a-9172-0b6046cc7d46
+			state: ACTIVE
+			lastAccessTime: Thu Nov 20 15:10:46 EST 2014
+user:
+	name: Provider User
+	credentials:
+		-
+		credential:
+			loginID: joe
+			passwordMessageDigest: bbc685ea57af18f873e105b91ea1af6a133944b2
+	roles:
+		-
+		role:
+			ID: provider_role
+			name: Provider Role
+			description: Role for Providers
+			subroles:
+				-
+			permissions:
+				-
+				permission:
+					ID: create_provider
+					name: Create Provider Permission
+					description: Permission to create a new provider
+				permission:
+					ID: update_provider
+					name: Update Provider Permission
+					description: Permission to update a provider
+				permission:
+					ID: create_office_space
+					name: Create Office Space Permission
+					description: Permission to create a new office space
+				permission:
+					ID: update_office_space
+					name: Update Office Space Permission
+					description: Permission to update an office space
+	permissions:
+		-
+	accessTokens:
+		-
+
